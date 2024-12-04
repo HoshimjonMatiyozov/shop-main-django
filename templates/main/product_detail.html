@@ -1,0 +1,71 @@
+{% extends 'layouts/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Mahsulot Tafsilotlari</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Nomi (UZ):</div>
+                        <div class="col-md-8">{{ product.name_uz }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Nomi (RU):</div>
+                        <div class="col-md-8">{{ product.name_ru }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Nomi (EN):</div>
+                        <div class="col-md-8">{{ product.name_en }}</div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Tavsif (UZ):</div>
+                        <div class="col-md-8">{{ product.description_uz|default:"-" }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Tavsif (RU):</div>
+                        <div class="col-md-8">{{ product.description_ru|default:"-" }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Tavsif (EN):</div>
+                        <div class="col-md-8">{{ product.description_en|default:"-" }}</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Miqdori:</div>
+                        <div class="col-md-8">{{ product.quantity }}</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Do'kon:</div>
+                        <div class="col-md-8">{{ product.shop.name_uz }}</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Holati:</div>
+                        <div class="col-md-8">
+                            {% if product.status == 0 %}
+                                <span class="badge bg-warning">Yangi</span>
+                            {% elif product.status == 1 %}
+                                <span class="badge bg-danger">Tasdiqlanmagan</span>
+                            {% else %}
+                                <span class="badge bg-success">Tasdiqlangan</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'main:product_create' %}" class="btn btn-primary">Yangi mahsulot qo'shish</a>
+                        <a href="{% url 'main:index' %}" class="btn btn-secondary">Orqaga</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

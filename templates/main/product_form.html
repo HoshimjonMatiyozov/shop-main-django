@@ -1,0 +1,28 @@
+{% extends 'layouts/form.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">Mahsulot Qo'shish</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" autocomplete="off">
+                        {% csrf_token %}
+                        {% bootstrap_form form layout='horizontal' %}
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success w-25">Qo'shish</button>
+                            <a href="{% url 'main:shop_create' %}" class="btn btn-secondary w-25">Orqaga</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
