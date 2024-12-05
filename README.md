@@ -6,7 +6,7 @@ Bu Django yaratilgan zamonaviy onlayn do'kon loyihasi.
 
 1. Loyihani clone qiling:
 ```bash
-git clone <repository-url>
+git clone <repository-url>(https://github.com/HoshimjonMatiyozov/shop-main-django)
 cd django-shop-main
 ```
 
@@ -58,13 +58,7 @@ python manage.py runserver
 - Buyurtma berish
 - Admin panel orqali boshqarish
 
-## Hissa qo'shish
 
-Loyihani yaxshilash bo'yicha takliflaringiz bo'lsa, "Pull Request" yuborishingiz mumkin.
-
-## Litsenziya
-
-  [MIT](https://choosealicense.com/licenses/mit/)
 # virtual muhitni yarating va faollashtirish
 python -m venv venv
 # Windows uchun
@@ -78,22 +72,6 @@ python manage.py migrate
 # Serverni ishga tushirish:
 python manage.py runserver
 
-
-
-
-#  Texnologiyalar
-Django
-Django REST Framework
-SQLite
-HTML/CSS
-JavaScript
-
-#  Loyiha tuzilishi
-api/ - REST API endpointlari
-config/ - Loyiha sozlamalari
-main/ - Asosiy ilova
-templates/ - HTML shablonlar
-user/ - Foydalanuvchilar bilan ishlash moduli
 
 #  Imkoniyatlar
 Foydalanuvchilar ro'yxatdan o'tishi va tizimga kirishi
