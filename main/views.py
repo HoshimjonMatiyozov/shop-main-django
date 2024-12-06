@@ -54,7 +54,7 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'  # template'da ishlatadigan o'zgaruvchi nomi
     
     def get_object(self, queryset=None):
-        return self.model.objects.get(name_uz=self.kwargs['name'])  # URL'dan mahsulot nomini olib, bazadan qidiramiz
+        return self.model.objects.get(name_uz=self.kwargs['name_uz'])  # URL'dan mahsulot nomini olib, bazadan qidiramiz
     
 
 class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
